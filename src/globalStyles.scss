@@ -1,0 +1,25 @@
+*{
+    --main_Color: #5E3BEE;
+    --main_Color_Light: rgba(94, 59, 238, .1 );
+    --green: rgb(43, 255, 0);
+    --green_Light: rgba(89, 255, 0, 0.299);
+    --black: #000000;
+    --kind_of_white: #F5FCFF;
+    --white_Light: rgba(255, 255, 255, .52);
+    --white: #FFFFFF;
+    --red: #E62872;
+    --red_Light: #e628285e;
+    --dark_Blue: #1C1E53;
+    --dark: #282938;
+    --gray: #A3A3A3;
+    --navH: 4rem;
+
+    --fading_duration: 1s;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+
+}
+
+.globalContainer{
+    width: 100%;
+}

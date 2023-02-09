@@ -1,0 +1,81 @@
+.Footer{
+    width: 100%;
+    // height: 5rem;
+    padding: 2rem 0;
+    background-color: var(--main_Color);
+
+    display: flex;
+    justify-content: space-around;
+
+
+    .contributors{
+        flex:2;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding: 0 1rem;
+
+        p{
+            font-weight: bold;
+        }
+        .designers{
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            .designer{
+                a{
+                    text-decoration: none;
+                    color: var(--white);
+                }
+            }
+        }
+    }
+
+    .navs{
+        flex: 3;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .nav{
+            a{
+                text-decoration: none;
+                color: var(--white);
+                font-weight: bold;
+            }
+        }
+    }
+
+    .socials{
+        flex:1;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 1rem;
+        padding-right: 2rem;
+        margin-left: 6rem;
+        .contact_Logo{
+            display: flex;
+            align-items: center;
+           
+            height: 100%;
+        }
+    }
+
+}
+
+@media all and (max-width: 500px){
+    .Footer{
+        .navs{
+            display: none;
+        }
+
+        .contributors{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: center;
+        }
+    }
+}

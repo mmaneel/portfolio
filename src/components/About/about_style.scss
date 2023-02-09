@@ -1,0 +1,217 @@
+@import '../animations.scss';
+.About{
+    height: 100vh;
+    margin-top: calc(-1 * var(--navH));
+    background-image: url('../../images/about_background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    .text{
+        width: 60%;
+        padding: 7rem 0 0 3rem;
+        .fade_2{
+            color: var(--main_Color);
+            animation: fade var(--fading_duration) 0s 1 forwards;
+        }
+        h1{
+            font-size: 2rem;
+            margin-bottom: 0;
+            .fade_1{
+                color: var(--dark);
+                animation: fade var(--fading_duration) 0s 1  forwards;
+            }
+            
+            .nickName{
+                
+                text-align: right;
+                position: relative;
+                color: var(--dark);
+                width: fit-content;
+                .visual{
+                  display: inline-block;
+                }
+          
+                .hidden{
+                  display: none;
+                }
+          
+                #o1{
+                  animation: animate-o1 1ms 500ms forwards;
+                  // anim
+                }
+                span.glitch1, span.glitch2{
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  color: transparent;
+                  z-index: -1;
+                }
+          
+                span.glitch1{
+          
+                  animation:animate-glitch1 .5s 1s reverse infinite;
+                  -moz-animation: animate-glitch1 .5s 1s reverse infinite;
+                  -webkit-animation: animate-glitch1 .5s 1s reverse infinite;
+                  -o-animation: animate-glitch1 .5s 1s reverse infinite;
+                }
+          
+                span.glitch2{
+                  //text-shadow: .02em 0 rgba(0, 0, 0,1);
+                  animation:animate-glitch2 1s 1s reverse infinite;
+          
+                }
+          
+                &::after{
+                  content: "";
+                  width: .2rem;
+                  height: 100%;
+                  background-color: var(--gray);
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  z-index: 1;
+                  animation: blinker 1s 0s infinite;
+                  transform: translateX(40%) translateY(-15%);
+          
+                }
+          
+                &::before{
+                  content: "";
+                  width: .8rem;
+                  height: 95%;
+                  border-top:  var(--gray) solid 2px;
+                  border-bottom:  var(--gray) solid 2px;
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  transform: translateX(52%) translateY(-15%);
+                  z-index: 1;
+                  animation: blinker 1s 0s infinite;
+                }
+              }
+        }
+
+        .bio{
+            font-size: 1.5rem;
+            color: var(--gray);
+            width: 70%;
+            animation: fade var(--fading_duration) 0s 1 forwards;
+        }
+
+        .fade_3{
+            animation: fade var(--fading_duration) 0s 1 forwards;
+        }
+
+        .scroll {
+            height: fit-content;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--main_Color);
+            a {
+              color: var(--main-blue);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-decoration: none;
+              gap: 1rem;
+        
+              #hand {
+                transform: rotate(180deg);
+                width: 3rem;
+                height: 3rem;
+                
+                animation: animate-hand 1.5s 0s reverse infinite;
+              }
+            }
+        
+            transition: transform 0.5s;
+        
+            &:hover {
+              cursor: pointer;
+              transform: scale(1.1);
+            }
+          }
+    }
+
+    .picture{
+        width: calc(40% - 5rem);
+        display: flex;
+        align-items: center;
+        img{
+            width: 23rem;
+            height: 23rem;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .whiteCircle{
+            width: 25rem;
+            height: 25rem;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: fade var(--fading_duration) 0s 1 forwards;
+            .waveCircle{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--main_Color);
+                border-radius: 50%;
+                width: 90%;
+                height: 90%;
+                position: absolute;
+                /* z-index: -1; */
+                animation: wave 2s 2s infinite;
+            
+                .innerCircle{
+                    background-color: var(--white);
+                    border-radius: 50%;
+                    width: 99%;
+                    height: 99%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    
+
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 500px){
+  .About {
+    .picture{
+      display: none;
+    }
+    .text {
+      padding: calc(var(--navH)) 0 0 1rem;
+      width: 100%;
+
+      h1{
+        font-size: 2rem;
+      }
+
+      .bio{
+        font-size: 1rem;
+      }
+
+      .scroll{
+        font-size: 1rem;
+
+        a{
+          #hand{
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+    }
+    
+  }
+}
